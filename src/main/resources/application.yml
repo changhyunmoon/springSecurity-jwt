@@ -1,0 +1,36 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/jwt_security?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: root
+    password: ansckdgus1!
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+    open-in-view: false
+
+jwt:
+  secret: "spring-security-jwt-team6-secret-key-2026-access-token"
+  access-token-expiration-ms: 3600000
+  refresh-token-expiration-ms: 1209600000
+
+#???
+cookie:
+  refresh-token:
+    name: refreshToken
+    path: /
+    secure: false
+    same-site: Lax
+
+#???
+#cookie:
+#  refresh-token:
+#    name: refreshToken
+#    path: /
+#    secure: true
+#    same-site: None
